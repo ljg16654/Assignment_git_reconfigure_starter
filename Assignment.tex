@@ -1,4 +1,4 @@
-% Created 2021-04-11 日 10:50
+% Created 2021-04-11 日 11:24
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
@@ -70,7 +70,7 @@ coltitle=white, separator sign={\ $\blacktriangleright$}}
 \maketitle
 
 \section{Git}
-\label{sec:org5a4c4e4}
+\label{sec:orgadf6835}
 
 If you haven't been familiar with basic usage of \texttt{Git}, please issue the
 following command in your terminal:
@@ -85,7 +85,7 @@ are great material for getting started with \texttt{Git}.
 If you haven't used \texttt{man} before, you can get started with \texttt{man man}!
 
 \section{Dynamic reconfigure}
-\label{sec:org4ac6042}
+\label{sec:org348f938}
 
 Please read  \href{http://wiki.ros.org/dynamic\_reconfigure/Tutorials}{ROS tutorial on dynamic reconfigure} and create a package
 named \texttt{dynamic\_tutorials} with the following components:
@@ -94,25 +94,25 @@ named \texttt{dynamic\_tutorials} with the following components:
 The reconfigureable parameters should include
 \begin{itemize}
 \item a \texttt{enumuration} specifying size of the polygon (distance from the
-center to any vertex of it).
-\item an integer specifying number of sides of the polygon
+center to any vertex of it in pixel).
+\item an integer specifying number of sides of the polygon.
 \end{itemize}
 \end{component}
-
 
 \begin{component}{A server} {}
 The server should
 \begin{itemize}
-\item prints the received parameters
-\item renders a polygon with \texttt{OpenCV} with shape specified in the
+\item print the received parameters
+\item render a polygon with \texttt{OpenCV}. Its shape is specified in the
 dynamically reconfigureable node you've written.
 \end{itemize}
 \end{component}
 
 \section{Submission}
-\label{sec:org7b4406e}
+\label{sec:org6d5d073}
 
 We encourage the usage of github classroom to submit your
-assignment. If you meet any problem, please send email to
+assignment. The \textbf{package} you created for the assignment is the git
+repository. If you meet any problems, please send emails to
 hcimu@umich.edu.
 \end{document}

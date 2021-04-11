@@ -1,0 +1,118 @@
+% Created 2021-04-11 日 10:50
+% Intended LaTeX compiler: pdflatex
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{mathtools}
+\newcounter{theorem_cnt}[section]
+\newcounter{definition_cnt}[section]
+\newcounter{proposition_cnt}[section]
+\newtcbtheorem{theorem}{Theorem}
+{breakable, enhanced, before title={\stepcounter{theorem_cnt}}, colback=gray!5, colframe=green!35!black, fonttitle=\bfseries,
+attach boxed title to top left={xshift=5mm, yshift*=-\tcboxedtitleheight/2},
+boxed title style={colback=blue!35!green}, separator sign={\ $\blacktriangleright$}}
+{theorem}
+\newtcbtheorem[number within=theorem_cnt]{lemma}{Lemma}{breakable, enhanced, colback=gray!5, colframe=blue!35!black, fonttitle=\bfseries,
+coltitle=white, separator sign={\ $\blacktriangleright$}}
+{lemma}
+\newtcbtheorem{proposition}{Proposition}
+{breakable, enhanced, before title = {\stepcounter{proposition_cnt}}, colback=gray!5, colframe=blue!35!black, fonttitle=\bfseries,
+coltitle=white, separator sign={\ $\blacktriangleright$}}
+{proposition}
+\newtcbtheorem{comdefinition}{Definition}
+{breakable, enhanced, before title={\stepcounter{definition_cnt}}, colback=gray!5, colframe=green!35!black, fonttitle=\bfseries,
+attach boxed title to top left={xshift=5mm, yshift*=-\tcboxedtitleheight/2},
+boxed title style={colback=blue!35!green}, separator sign={\ $\blacktriangleright$}}
+{definition}
+\newtcbtheorem{component}{Component}
+{breakable, enhanced, before title={\stepcounter{definition_cnt}}, colback=gray!5, colframe=green!35!black, fonttitle=\bfseries,
+attach boxed title to top left={xshift=5mm, yshift*=-\tcboxedtitleheight/2},
+boxed title style={colback=blue!35!green}, separator sign={\ $\blacktriangleright$}}
+{component}
+\newtcolorbox{fact}[1][Fact]
+{breakable, fonttitle=\bfseries, colback=white, title=#1, titlebox=visible, colback=gray!5}
+\newtcolorbox{notation}[1][Notation]
+{breakable, fonttitle=\bfseries, colback=white, title=#1, titlebox=visible, colback=gray!5}
+\newtcolorbox{remark}[1][Remark]
+{breakable, fonttitle=\bfseries, colback=white, title=#1, titlebox=visible, colback=gray!5}
+\newtcbtheorem[number within=tcnt]{corollary}{Corollary}{breakable, enhanced, colback=gray!5, colframe=blue!35!black, fonttitle=\bfseries,
+coltitle=white, separator sign={\ $\blacktriangleright$}}
+{corollary}
+\author{Jigang Li}
+\date{\today}
+\title{Assignment1\\\medskip
+\large Basic usage of \texttt{git} and dynamic reconfigure}
+\hypersetup{
+ pdfauthor={Jigang Li},
+ pdftitle={Assignment1},
+ pdfkeywords={\author{Jigang Li}},
+ pdfsubject={},
+ pdfcreator={Emacs 28.0.50 (Org mode 9.4.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{Git}
+\label{sec:org5a4c4e4}
+
+If you haven't been familiar with basic usage of \texttt{Git}, please issue the
+following command in your terminal:
+
+\begin{verbatim}
+man git
+\end{verbatim}
+
+The manpage will guide you to \texttt{gittutorial(7)} and \texttt{giteveryday(7)}, which
+are great material for getting started with \texttt{Git}.
+
+If you haven't used \texttt{man} before, you can get started with \texttt{man man}!
+
+\section{Dynamic reconfigure}
+\label{sec:org4ac6042}
+
+Please read  \href{http://wiki.ros.org/dynamic\_reconfigure/Tutorials}{ROS tutorial on dynamic reconfigure} and create a package
+named \texttt{dynamic\_tutorials} with the following components:
+
+\begin{component}{A dynamically reconfigureable node} {}
+The reconfigureable parameters should include
+\begin{itemize}
+\item a \texttt{enumuration} specifying size of the polygon (distance from the
+center to any vertex of it).
+\item an integer specifying number of sides of the polygon
+\end{itemize}
+\end{component}
+
+
+\begin{component}{A server} {}
+The server should
+\begin{itemize}
+\item prints the received parameters
+\item renders a polygon with \texttt{OpenCV} with shape specified in the
+dynamically reconfigureable node you've written.
+\end{itemize}
+\end{component}
+
+\section{Submission}
+\label{sec:org7b4406e}
+
+We encourage the usage of github classroom to submit your
+assignment. If you meet any problem, please send email to
+hcimu@umich.edu.
+\end{document}
